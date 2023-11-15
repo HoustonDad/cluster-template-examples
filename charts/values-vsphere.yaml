@@ -1,6 +1,6 @@
 cloudprovider: vsphere
 
-cloudCredentialSecretName: vsphere
+cloudCredentialSecretName: RFEDLab
 
 # Specify nodepool options. Can add multiple node groups, specify etcd, controlplane and worker roles.
 nodepools:
@@ -60,7 +60,7 @@ nodepools:
   # machineDeploymentAnnotations: {}
 
   # specify nodepool name
-  name: vsphere-nodepool-1
+  name: perk-nodepool-1
 
   # vSphere vm configuration parameters (used for guestinfo)
   # cfgparam: []
@@ -80,7 +80,7 @@ nodepools:
   # contentLibrary: ""
 
   # vSphere CPU number for docker VM
-  cpuCount: "2"
+  cpuCount: "4"
 
   # 'Creation type when creating a new virtual machine. Supported values: vm, template, library, legacy'
   creationType: "vm"
@@ -89,10 +89,10 @@ nodepools:
   # customAttribute: ["200=mycustom value"]
 
   # vSphere datacenter for virtual machine
-  # datacenter: ""
+  datacenter: "RGS Datacenter"
 
   # vSphere datastore for virtual machine
-  # datastore: ""
+  datastore: "vsanDatastore"
 
   # vSphere datastore cluster for virtual machine
   # datastoreCluster: ""
@@ -101,19 +101,19 @@ nodepools:
   diskSize: "20480"
 
   # vSphere folder for the docker VM. This folder must already exist in the datacenter
-  # folder: ""
+  folder: "/RGS Datacenter/vm/Perk"
 
   # vSphere compute resource where the docker VM will be instantiated. This can be omitted if using a cluster with DRS
-  # hostsystem: ""
+  hostsystem: "rgs-vsan-1.lab"
 
   # vSphere size of memory for docker VM (in MB)
-  # memorySize: "2048"
+  memorySize: "4096"
 
   # vSphere network where the virtual machine will be attached
-  # network: ""
+  network: "DSwitch-VM_Network"
 
   # vSphere resource pool for docker VM
-  # pool: ""
+  pool: "host/New RGS Cluster/Resources"
 
   # If using a non-B2D image you can specify the ssh port
   sshPort: "22"
@@ -137,7 +137,7 @@ nodepools:
   # vappTransport: ""
 
   # vSphere IP/hostname for vCenter
-  # vcenter: ""
+  vcenter: "10.7.1.220"
 
   # vSphere Port for vCenter
   vcenterPort: 443
